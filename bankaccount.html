@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account Class</title>
+</head>
+<body>
+
+<h2>Bank Account Details</h2>
+
+<p id="output"></p>
+
+<script>
+    class BankAccount {
+        constructor(name, accNo, balance) {
+            this.name = name;
+            this.accNo = accNo;
+            this.balance = balance;
+        }
+
+        deposit(amount) {
+            this.balance += amount;
+        }
+
+        withdraw(amount) {
+            this.balance -= amount;
+        }
+
+        display() {
+            document.getElementById("output").innerHTML =
+                "Account Holder: " + this.name + "<br>" +
+                "Account Number: " + this.accNo + "<br>" +
+                "Balance: ₹" + this.balance;
+        }
+    }
+
+    // Create object
+    let acc = new BankAccount("Daksha", 101, 5000);
+
+    acc.deposit(1000);    
+    acc.withdraw(500);    
+    acc.display();        
+</script>
+
+</body>
+</html>
