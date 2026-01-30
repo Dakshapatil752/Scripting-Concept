@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Data Types Example</title>
+</head>
+<body>
+
+<script>
+    var age = Number(prompt("Enter age:"));   // Number
+    let message;                              // undefined
+    const voteAge = 18;                       // const Number
+
+    let canVote = Boolean(false);             // Boolean
+
+    if (age >= voteAge) {
+        message = "You can vote";
+        canVote = true;
+    } else {
+        message = "You cannot vote";
+        canVote = false;
+    }
+
+    alert(
+        message +
+        "\nEligible: " + canVote
+    );
+</script>
+
+</body>
+</html>

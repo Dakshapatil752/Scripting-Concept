@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill</title>
+</head>
+<body>
+
+<script>
+    
+    let previousReading = parseInt(prompt("Enter previous meter reading:"));
+    let currentReading = parseInt(prompt("Enter current meter reading:"));
+
+    
+    let units = currentReading - previousReading;
+    let bill = 0;
+
+    if (units <= 50) {
+        bill = units * 2;
+    } 
+    else if (units <= 100) {
+        bill = (50 * 2) + ((units - 50) * 3);
+    } 
+    else {
+        bill = (50 * 2) + (50 * 3) + ((units - 100) * 5);
+    }
+
+    alert(
+        "Units Consumed: " + units + 
+        "\nTotal Electricity Bill: ₹" + bill
+    );
+</script>
+
+</body>
+</html>
