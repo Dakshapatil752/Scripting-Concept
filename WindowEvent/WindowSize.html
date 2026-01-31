@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Resize Event</title>
+</head>
+<body>
+
+<h2>Resize the browser window</h2>
+
+<p id="size"></p>
+
+<script>
+    window.onresize = function () {
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        document.getElementById("size").innerHTML =
+            "Width: " + width + " px<br>" +
+            "Height: " + height + " px";
+    };
+</script>
+
+</body>
+</html>

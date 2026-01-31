@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Event</title>
+</head>
+<body>
+
+<h2>Scroll Down the Page</h2>
+
+<p id="msg"></p>
+
+<!-- Extra content to enable scrolling -->
+<div style="height: 1500px;"></div>
+
+<script>
+    window.onscroll = function () {
+        document.getElementById("msg").innerHTML =
+            "Page is being scrolled";
+    };
+</script>
+
+</body>
+</html>

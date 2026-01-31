@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Before Unload Event</title>
+</head>
+<body>
+
+<h2>Type something and try to close the window</h2>
+
+<input type="text" placeholder="Type here">
+
+<script>
+    window.addEventListener("beforeunload", function (e) {
+        e.preventDefault();
+        e.returnValue = "";
+    });
+</script>
+
+</body>
+</html>
