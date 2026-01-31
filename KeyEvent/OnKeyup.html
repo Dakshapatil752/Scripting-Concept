@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Event Example</title>
+</head>
+<body>
+
+<h3>Type something:</h3>
+<input type="text" onkeyup="countChar()" id="text">
+
+<p>Characters typed: <span id="count">0</span></p>
+
+<script>
+    function countChar() {
+        let text = document.getElementById("text").value;
+        document.getElementById("count").innerHTML = text.length;
+    }
+</script>
+
+</body>
+</html>

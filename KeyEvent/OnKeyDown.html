@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onkeydown Example</title>
+</head>
+<body>
+
+<h3>Type something:</h3>
+<input type="text" id="txt" onkeydown="countChar()">
+
+<p>Characters typed: <span id="count">0</span></p>
+
+<script>
+    function countChar() {
+        let text = document.getElementById("txt").value;
+        document.getElementById("count").innerHTML = text.length + 1;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Events</title>
+</head>
+<body>
+
+<h2>Course Selection Form</h2>
+
+<form onsubmit="return false">
+
+     Name:
+    <input type="text" 
+           onfocus="focusEvent(this)" 
+           onblur="blurEvent(this)">
+    <br><br>
+    Select Course:
+    <select>
+        <option>GATE</option>
+        <option>B.Tech</option>
+        <option>M.Tech</option>
+        <option>MS</option>
+    </select>
+    <br><br>
+
+    <input type="submit" 
+           value="Submit"
+           onmouseover="changeColor(this)"
+           onmouseout="normalColor(this)">
+
+</form>
+
+<script>
+    function changeColor(btn) {
+        btn.style.backgroundColor = "lightgreen";
+    }
+
+    function normalColor(btn) {
+        btn.style.backgroundColor = "white";
+    }
+</script>
+
+</body>
+</html>
