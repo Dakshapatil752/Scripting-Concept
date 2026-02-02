@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Class Example</title>
+</head>
+<body>
+
+<h2>Student Details</h2>
+<p id="output"></p>
+
+<script>
+    class Student {
+        constructor(name, roll, course) {
+            this.name = name;
+            this.roll = roll;
+            this.course = course;
+        }
+
+        display() {
+            document.getElementById("output").innerHTML =
+                "Name: " + this.name + "<br>" +
+                "Roll No: " + this.roll + "<br>" +
+                "Course: " + this.course;
+        }
+    }
+
+    // Take input from user
+    let name = prompt("Enter student name:");
+    let roll = prompt("Enter roll number:");
+    let course = prompt("Enter course:");
+
+    // Create object
+    let student1 = new Student(name, roll, course);
+
+    // Display details
+    student1.display();
+</script>
+
+</body>
+</html>
