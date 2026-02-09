@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Validation</title>
+</head>
+<body>
+
+<h2>Age Check</h2>
+
+<button onclick="checkAge()">Check Age</button>
+
+<p id="msg"></p>
+
+<script>
+    function checkAge() {
+        let age = Number(prompt("Enter your age:"));
+
+        try {
+            if (age < 18) {
+                throw "Age must be 18 or above";
+            }
+            document.getElementById("msg").innerHTML =
+                "Access Granted. Age: " + age;
+        }
+        catch (error) {
+            document.getElementById("msg").innerHTML =
+                "Error: " + error;
+        }
+    }
+</script>
+
+</body>
+</html>

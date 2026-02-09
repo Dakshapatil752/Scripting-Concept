@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exception Handling Example</title>
+</head>
+<body>
+
+<h2>Division using Try–Catch–Finally</h2>
+
+<button onclick="divide()">Divide Numbers</button>
+
+<p id="result"></p>
+
+<script>
+    function divide() {
+        let num1 = Number(prompt("Enter first number:"));
+        let num2 = Number(prompt("Enter second number:"));
+
+        try {
+            if (num2 === 0) {
+                throw "Cannot divide by zero";
+            }
+            let ans = num1 / num2;
+            document.getElementById("result").innerHTML =
+                "Result: " + ans;
+        }
+        catch (error) {
+            document.getElementById("result").innerHTML =
+                "Error: " + error;
+        }
+        finally {
+            console.log("Division operation completed");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation with Exception Handling</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Age:
+    <input type="number" id="age"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Upload Image:
+    <input type="file" id="image"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateForm() {
+    try {
+        let name = document.getElementById("name").value;
+        let age = Number(document.getElementById("age").value);
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let image = document.getElementById("image").value;
+
+        // Empty field validation
+        if (name === "" || email === "" || password === "") {
+            throw "Fields cannot be empty";
+        }
+
+        // Name length validation
+        if (name.length < 3 || name.length > 15) {
+            throw "Name must be between 3 and 15 characters";
+        }
+
+        // Age range validation
+        if (age < 18 || age > 60) {
+            throw "Age must be between 18 and 60";
+        }
+
+        // Email format validation
+        let emailPattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            throw "Invalid email format";
+        }
+
+        // Password strength validation
+        let passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!]).{6,}$/;
+        if (!passPattern.test(password)) {
+            throw "Password must contain small, capital, number & symbol";
+        }
+
+        // Image file validation
+        if (!image.match(/\.(jpeg|png|gif)$/)) {
+            throw "Image must be .jpeg, .png or .gif format";
+        }
+
+        alert("Form submitted successfully");
+        return true;
+    }
+    catch (error) {
+        alert("Error: " + error);
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>
